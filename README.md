@@ -6,9 +6,7 @@ tugas rekayasa perangkat lunak membuat web jual beli barang elektronik (Javice).
 
 framework codeigniter (HMVC)
 
-
-
- #Kelompok untuk pembuatan web ini sebagai berikut :
+#Kelompok untuk pembuatan web ini sebagai berikut :
     
   1. Cakra Aji Wicaksno    (141240000225)
   2. Rizky Ajie Setiawan   (141240000240)
