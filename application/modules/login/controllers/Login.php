@@ -30,7 +30,9 @@ class Login extends MY_Controller
 							'email' => $user->email,
 							'id' => $user->id_user,
 							'nama_lengkap' => $user->nama_lengkap,
-							'username' => $user->username
+							'username' => $user->username,
+							'alamat' => $user->alamat,
+							'ip_address' => $user->ip_address
 						));
 						redirect('dashboard');
 					}
@@ -61,7 +63,7 @@ class Login extends MY_Controller
 		}
 	}
 
-	function loggedin()
+	function profile()
 	{
 		if ($this->lib->login() != "")
 		{
@@ -73,8 +75,12 @@ class Login extends MY_Controller
 				$data['nama'] = $user->nama_lengkap;
 				$data['username'] = $user->username;
 				$data['ip'] = $user->ip_address;
+				$data['alamat'] = $user->alamat;
+				$data['gender'] = $user->gender;
 			}
-			$this->load->view('loggedin', $data);
+			$this->load->module('template');
+			$data['content_view']='login/profil';
+			$this->template->admin($data);
 		}
 		else
 		{

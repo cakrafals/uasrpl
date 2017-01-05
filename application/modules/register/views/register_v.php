@@ -73,8 +73,8 @@
       	   <?php
   		       $gender = array(
   			          ''	=> 'Jenis kelamin...',
-  			          '2'	=> 'Laki-laki',
-  			          '1'	=> 'Perempuan'
+  			          'Pria'	=> 'Pria',
+  			          'Perempuan'	=> 'Perempuan'
   		              );
   		echo form_dropdown('gender', $gender, '', 'class="ui fluid dropdown"');
   		?>
