@@ -178,6 +178,11 @@ $username = ($this->session->userdata['username']);
               <li>
               <a href="<?php echo base_url(); ?>keranjang" class="waves-effect waves-cyan"><i class="material-icons">shopping_cart</i>Keranjang</a>
             </li>
+                <li class="li-hover"><div class="divider"></div></li>
+                          <li class="li-hover"><div class="divider"></div></li>
+                          <li class="li-hover">
+                              <li class="bold"><a href="<?php echo base_url(); ?>products/me"><i class="material-icons">local_atm</i>products ku</a>
+                                  <li class="li-hover"><div class="divider"></li>
 
               <!--halaman about & bantuan -->
 

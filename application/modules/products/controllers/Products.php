@@ -139,10 +139,12 @@ class Products extends MX_Controller
 				'style' => '<style type="text/css">.main.container, .ui.vertical.segment {margin-top: 7em;}.ui.menu .item img.logo {margin-right: 1em;}</style>'
 			);
 
-        	//$this->template->header($data);
+        	$this->load->module('template');
+					$data['content_view']='products/tokoku';
+					$this->template->admin($data);
 			//$this->template->nav_menu();
 			//$this->template->sidebar_dashboard();
-			$this->load->view('tokoku', $data);
+			//$this->load->view('tokoku', $data);
         //	$this->template->footer();
 		}
 	}
