@@ -17,7 +17,7 @@ class Category extends MX_Controller
 	function show()
 	{
 		$this->load->model('M_category');
-		$this->load->model('dashboard/M_dashboard', 'M_dashboard');
+		$this->load->model('products/M_products', 'M_products');
 
 		$slug = $this->uri->segment(2);
 		$col = "slug";
@@ -31,7 +31,7 @@ class Category extends MX_Controller
 				$name_category = $row_category->category;
 				$slug_category = $row_category->slug;
 			}
-			//$this->load->module('template');
+			$this->load->module('template');
 			$data = array (
 				'query_products' => $this->M_products->get_where_custom('id_category', $id_category),
 				'title' => $name_category,
@@ -39,10 +39,10 @@ class Category extends MX_Controller
 				'slug_category' => $slug_category,
 				'style' => '<style type="text/css">h3 > b{color:#21BA45;}</style>'
 			);
-		//	$this->template->header($data);
+		$this->template->navbar();
 			//$this->template->nav_menu();
 			$this->load->view('category_v', $data);
-			//$this->template->footer();
+			$this->template->footer();
         }
         else
         {

@@ -1,19 +1,30 @@
-<div class="ui main container" style="margin-top: 7em;padding-top: 0rem;">
-<div class="ui stackable grid container">
-    <div class="row">
-    <div class="ten wide column except">
-    <small><?=anchor('', 'Home')?> > <?php echo anchor('c/'.$slug_category, $name_category);?> > <?php echo $name_products;?></small>
-    <?php
-    echo $this->session->flashdata("result");
-    echo heading($name_products, 2);
-    ?>
+<style>
+.menu {
+    width: 65%;
+    float: left;
+    padding: 25px;
+
+}
+.main {
+    width: 35%;
+    float: left;
+padding: 25px;
+}
+</style>
+<title>Detail Products</title>
+      <div class="menu">
+      <small align-content-left><?=anchor('dashboard', 'Home')?> > <?php echo anchor('c/'.$slug_category, $name_category);?> > <?php echo $name_products;?></small>
+      <?php
+      echo $this->session->flashdata("result");
+      echo heading($name_products, 2);
+      ?>
       <table width="100%">
         <tr>
-          <td width="20%">Nama Produk</td>
+          <td>Nama Produk</td>
           <td><?php echo ": ".$name_products;?></td>
         </tr>
         <tr>
-          <td width="10%">Stok</td>
+          <td>Stok</td>
           <td>: <?php
           if ($qty_products === '' OR $qty_products === '0'):
             echo '<mark>Stok Habis</mark>';
@@ -23,17 +34,32 @@
           ?></td>
         </tr>
         <tr>
-          <td width="10%">Harga</td>
+          <td width>Harga</td>
           <td><?php echo ": ".$this->lib->format_rupiah($price);?></td>
         </tr>
         <tr>
-          <td width="10%">Penjual</td>
+          <td alig="center">Penjual</td>
           <td><?php echo ": ".$nama_lengkap;?></td>
         </tr>
+
         <tr>
           <td colspan="2"><?php echo heading('Deskripsi', 3).$description_products;?></td>
         </tr>
       </table>
+</div>
+
+
+<div class="main">
+<div class="image"><?php
+  $image_properties = array(
+    'src' => $image_products,
+  //  'width' => 100,
+    //'hight' => 100
+  );
+  echo img($image_properties); ?>
+</div>
+
+</div>
     <?php
     if ($qty_products === '' OR $qty_products ==='0'):
       echo "";
@@ -45,6 +71,7 @@
         'style' => 'display:none;',
         'value' => $id_products
       );
+
       echo form_input($id);
 
       $url = array(
@@ -69,8 +96,8 @@
         'style' => 'display:none;',
         'value' => $price
       );
-      echo form_input($prc);
 
+      echo form_input($prc);
       echo "Beli : ";
       echo "<select name=\"_qty\" class=\"ui dropdown\">";
       for ($i = 1; $i <= $qty_products; $i++) {
@@ -84,6 +111,7 @@
         'value' => 'Beli',
         'class' => 'ui teal submit button'
       );
+      echo "<br><br>";
       echo form_submit($submit);
       echo form_close();
     endif;
@@ -91,18 +119,3 @@
     echo Modules::run('cart/_count_cart_user');
 
   ?>
-    </div>
-    <div class="four wide column except">
-      <div class="image"><?php
-        $image_properties = array(
-          'src' => $image_products,
-          'width' => 400
-        );
-        echo img($image_properties); ?>
-      </div>
-    </div>
-
-  </div>
-  </div>
-
-</div>

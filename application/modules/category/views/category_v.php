@@ -1,9 +1,13 @@
-<div class="ui vertical segment" style="margin-top: 7em;padding-top: 0rem;">
+<title>Category <?php echo $name_category; ?></title>
+<div class="ui vertical segment" style="padding-top: 0em;padding-left: 2rem;">
   <div class="ui main grid container">
+    <br>
+    <small><?=anchor('dashboard','Home')?> > <?php echo anchor('c/'.$slug_category, $name_category);?> > <?php echo $name_category;?></small><br>
+    <br>
     <?php echo heading('Kategori <b>"'.$name_category.'"</b>', 3, 'class="ui dividing header"'); ?>
   </div>
-  <div class="ui center aligned stackable grid container">
-    <div class="row">
+
+
       <?php
       // echo heading('Kategori <b>"'.$name_category.'"</b>', 3, 'class="ui dividing header"');
       echo br();

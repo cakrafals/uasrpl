@@ -9,6 +9,6 @@ class Service extends MY_Controller
 
 	public function index(){
 		$data['content_view']='service/service_v';
-		$this->template->admin_template($data);
+		$this->template->admin($data);
 	}
 }

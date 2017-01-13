@@ -6,7 +6,11 @@ class Login extends MY_Controller
 	}
 
 	public function index(){
-//	$this->load->view('login_v');
+
+		$this->template->navbar();
+		$this->load->view('login_v');
+		$this->template->footer();
+
 	$this->load->model('Mdl_login');
 	if ($this->lib->login() != "")
 		{
@@ -14,6 +18,7 @@ class Login extends MY_Controller
 		}
 		else
 		{
+
 			$this->form_validation->set_rules('_email', 'Email', 'trim|required|valid_email|xss_clean');
 			$this->form_validation->set_rules('_password', 'Password', 'trim|required|xss_clean');
 			$this->form_validation->set_error_delimiters('<p style="color:red;">', '</p>');
@@ -43,9 +48,8 @@ class Login extends MY_Controller
 					$data = array(
 						'error' => 'Maaf, Email atau Password salah!',
 						'title' => 'Masuk',
-						'style' => '<style type="text/css">body {background-color: #DADADA;}body > .grid {height: 100%;}.image {margin-top: -100px;}.column {max-width: 450px;}</style>'
+						'style' => '<style type="text/css">body {background-color: #DADADA;}body > .grid {height: 100%;}.image {margin-top: -100px;}.column {max-width: 100;}</style>'
 					);
-					$this->load->view('login_v', $data);
 
 				}
 			}
@@ -57,7 +61,7 @@ class Login extends MY_Controller
 					'style' => '<style type="text/css">body {background-color: #DADADA;}body > .grid {height: 100%;}.image {margin-top: -100px;}.column {max-width: 450px;}</style>'
 				);
 
-				$this->load->view('login_v', $data);
+			//	$this->load->view('login_v', $data);
 
 			}
 		}
@@ -76,11 +80,9 @@ class Login extends MY_Controller
 				$data['username'] = $user->username;
 				$data['ip'] = $user->ip_address;
 				$data['alamat'] = $user->alamat;
-				$data['gender'] = $user->gender;
+			//	$data['gender'] = $user->gender;
 			}
-			$this->load->module('template');
-			$data['content_view']='login/profil';
-			$this->template->admin($data);
+		$this->load->view('profil');
 		}
 		else
 		{

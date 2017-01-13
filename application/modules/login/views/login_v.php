@@ -2,13 +2,15 @@
 $email = array(
   'type'  => 'email',
   'name'  => '_email',
-  'placeholder' => 'E-Mail'
+  'placeholder' => 'E-Mail',
+
 );
 $password = array(
   'type'  => 'password',
   'name'  => '_password',
   'placeholder' => 'Password'
 );
+
 $submit = array(
   'type'  => 'submit',
   'name'  => '_login',
@@ -27,32 +29,35 @@ $submit = array(
   $attributes = array('class' => 'ui large form');
   echo form_open($this->uri->uri_string, $attributes);
   ?>
-      <div class="ui stacked segment">
-        <div class="ui error message"></div>
-        <div class="field">
-          <div class="ui left icon input">
-            <i class="user icon"></i>
-            <?php
-            echo form_error('_email');
-            echo form_input($email);
-            ?>
-          </div>
-        </div>
-        <div class="field">
-          <div class="ui left icon input">
-            <i class="lock icon"></i>
-            <?php
-            echo form_error('_password');
-            echo form_input($password);
-            ?>
-          </div>
-        </div>
 
+  <title> Login | Javice </title>
+<br><br>
+
+
+  <div align="center">
+      <label>Email  :  </label><br><br>
+          <?php
+              echo form_error('_email');
+              echo form_input($email);
+          ?>
+          <br><br>
+
+    <div align="center">
+      <label>Password : </label><br><br>
+              <?php
+                  echo form_error('_password');
+                  echo form_input($password);
+                  ?>
+    </div><br><br>
+
+
+  <div align="center">
         <?php echo form_submit($submit);?>
-      </div>
-  <?php echo form_close();?>
-  <div class="ui message">
-      BELUM PUNYA AKUN? <a href="register">Daftar Sekarang!</a>
     </div>
+<br><br>
+  <?php echo form_close();?>
+
+  <div class="ui message" align="center">
+          BELUM PUNYA AKUN? <a href="register">Daftar Dong Bos!</a>
   </div>
-</div>
+<br><br><br>

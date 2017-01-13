@@ -9,7 +9,7 @@ class Bukaservis extends MY_Controller
 
 	public function index(){
 		$data['content_view']='bukaservis/bukaservis_v';
-		$this->template->admin_template($data);
+		$this->template->admin($data);
 	}
-	
+
 }

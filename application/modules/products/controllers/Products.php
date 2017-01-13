@@ -1,24 +1,27 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Products extends MX_Controller
+class Products extends MY_Controller
 {
 
 	function __construct()
 	{
         parent::__construct();
 //		$this->load->module('template');
+$this->load->model('M_products');
     }
 
 	public function index($param='')
 	{
-		header('Location: '.base_url().'');
+
+
+	$this->load->view('produk_v');
 	}
 
 	function detail()
 	{
 		$this->load->model('M_products');
-		$this->load->model('category/M_category', 'M_category');
+		$this->load->model('category/M_category');
 
 		$slug_category = $this->uri->segment(2);
 		$slug_products = $this->uri->segment(3);
@@ -47,12 +50,12 @@ class Products extends MX_Controller
 	        		$data['id_seller'] = $row_products->id_user;
 	        		$data['image_products'] = $row_products->image1;
 	        	}
+	        	$this->template->navbar();
+						$data['title'] = $data['name_products'];
+						$this->load->view('produk_v', $data);
+						$this->template->footer();
 
-	        	$data['title'] = $data['name_products'];
-	        	//$this->template->header($data);
-	        	//$this->template->nav_menu($data);
-	        	$this->load->view('products', $data);
-	        	//$this->template->footer();
+
 	        }
 	        else
 	        {
@@ -75,7 +78,7 @@ class Products extends MX_Controller
 		else
 		{
 			$this->load->model('M_products');
-			$this->load->model('cart/M_cart', 'M_cart');
+			$this->load->model('cart/M_cart');
 
 			$url = $this->input->post('_url');
 			$order_now = date("Ymd");

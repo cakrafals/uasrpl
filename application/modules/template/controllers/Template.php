@@ -11,11 +11,19 @@ class template extends MY_Controller
 		$this->load->view('template/t_awal',$data);
 	}
 
-	function r($data = null){
-		$this->load->view('template/tregister',$data);
+	function footer($data = null){
+		$this->load->view('template/footer',$data);
 	}
 
 	function admin($data = null){
 		$this->load->view('template/admin_template_v',$data);
 	}
+
+			function navbar($data = null){
+				$this->load->view('template/navbar1',$data);
+			}
+			function dash($data = null){
+				$this->load->view('template/navbar',$data);
+			}
+
 }

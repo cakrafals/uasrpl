@@ -132,30 +132,18 @@ $username = ($this->session->userdata['username']);
                       <li class="bold"><a class="collapsible-header  waves-effect waves-cyan"><i class="mdi-hardware-keyboard-arrow-down"></i>Kategori</a>
                           <div class="collapsible-body">
                               <ul>
-                                  <li><a href="<?php echo base_url(); ?>produk">AC</a>
-                                  </li>
-                                  <li><a href="<?php echo base_url(); ?>produk/tv">TV</a>
-                                  </li>
-                                  <li><a href="<?php echo base_url(); ?>produk/hp">HP</a>
-                                  </li>
-                                  <li><a href="<?php echo base_url(); ?>produk/komputer">Komputer</a>
-                                  </li>
-                                  <li><a href="<?php echo base_url(); ?>produk/kulkas">Kulkas</a>
-                                  </li>
-                                  <li><a href="<?php echo base_url(); ?>produk/mesincuci">Mesin Cuci</a>
-                                  </li>
-                                  <li><a href="<?php echo base_url(); ?>produk/radio">Radio</a>
-                                  </li>
-                                  <li><a href="<?php echo base_url(); ?>produk/kipasangin">Kipas Angin</a>
-                                  </li>
-                                  <li><a href="<?php echo base_url(); ?>produk/dvdplayer">DVD Player</a>
-                                  </li>
-                                  <li><a href="<?php echo base_url(); ?>produk/monitor">Monitor</a>
-                                  </li>
-                                  <li><a href="<?php echo base_url(); ?>produk/sound">Sound</a>
-                                  </li>
-                                  <li><a href="<?php echo base_url(); ?>produk/laptop">Laptop</a>
-                                  </li>
+
+                                <?php
+                                foreach ($query->result() as $row):
+                                  $url_category = base_url().'c/'.$row->slug;
+
+                                ?>
+                                <li>
+                                  <?php echo  anchor($url_category, $row->category);?>
+
+                                <?php endforeach;
+                                ?>
+                              </li>
                               </ul>
                           </div>
                       </li>
@@ -172,15 +160,19 @@ $username = ($this->session->userdata['username']);
                   <li class="bold"><a href="<?php echo base_url(); ?>bukaservis"><i class="material-icons">build</i> Buka Service</a>
               </li>
 
-              <!--keranjang belanja -->
+
 
               <li class="li-hover"><div class="divider"></li>
               <li>
-              <a href="<?php echo base_url(); ?>keranjang" class="waves-effect waves-cyan"><i class="material-icons">shopping_cart</i>Keranjang</a>
+              <a href="<?php echo base_url(); ?>cart" class="waves-effect waves-cyan"><i class="material-icons">shopping_cart</i>Keranjang</a>
             </li>
-                <li class="li-hover"><div class="divider"></div></li>
-                          <li class="li-hover"><div class="divider"></div></li>
-                          <li class="li-hover">
+                <li class="li-hover"><div class="divider"></li>
+            <li>
+            <a href="<?php echo base_url(); ?>sell_transactions" class="waves-effect waves-cyan"><i class="material-icons">redo</i>Transaksi Jual</a>
+          </li>
+          <li>
+          <a href="<?php echo base_url();?>buy_transactions" class="waves-effect waves-cyan"><i class="material-icons">undo</i>Transaksi Beli</a>
+        </li>
                               <li class="bold"><a href="<?php echo base_url(); ?>products/me"><i class="material-icons">local_atm</i>products ku</a>
                                   <li class="li-hover"><div class="divider"></li>
 

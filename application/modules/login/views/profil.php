@@ -18,7 +18,9 @@
 <?php
 
 echo "Nama : {$nama}<br>";
-echo "Jenis kelamin : {$gender}<br>";
+
+
+
 //echo "Username : {$username}<br>";
 //echo "IP : {$ip}<br/>";
 //echo "ID : {$id}<br/>";

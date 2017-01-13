@@ -6,13 +6,14 @@
 		$attributes = array('class' => 'ui large form');
 		echo form_open('register/kirim', $attributes);
 		?>
-
+<title>Register | Javice</title>
     <!--input username -->
-
-  <div class="row">
+<br>
+  <div align="center">
       <form class="col s12">
         <div class="row">
           <div class="input-field col s12">
+            <label>Username</label>
             <?php
 			        $username = array(
 				        'name' => '_username',
@@ -20,13 +21,14 @@
 				        'autocomplete' => 'off'
 			                           );
 			        echo form_input($username); ?>
-            <label>Username</label>
+
         </div>
    </div><br>
 
            <!--input email-->
      <div class="row">
         <div class="input-field col s12">
+              <label>Email</label>
             <?php
                 $email = array(
                     'name' => '_email',
@@ -34,13 +36,14 @@
                     'autocomplete' => 'off'
                       );
                 echo form_input($email); ?>
-                <label>Email</label>
+
               </div>
           </div><br>
 
                   <!--input Password -->
       <div class="row">
           <div class="input-field col s12">
+            <label>Password</label>
               <?php
 	              $password = array(
 	        	        'name' => '_password',
@@ -48,13 +51,14 @@
 				            'autocomplete' => 'off'
 	                      );
 	        echo form_password($password); ?>
-          <label>Password</label>
+
         </div>
     </div><br>
 
             <!--input Nama-->
       <div class="row">
           <div class="input-field col s12">
+            <label>Nama</label>
               <?php
                   $nama = array(
                       'name' => '_nama_lengkap',
@@ -64,7 +68,7 @@
                       'autocomplete' => 'off'
                         );
             echo form_input($nama); ?>
-            <label>Nama</label>
+
           </div>
         </div><br>
 
@@ -78,11 +82,11 @@
   		              );
   		echo form_dropdown('gender', $gender, '', 'class="ui fluid dropdown"');
   		?>
-    </div><br>
+    </div><br><br>
 
               <!--input Alamat -->
      <div class="field">
-       <label>Alamat</label>
+       <label>Alamat</label><br>
           <?php
             $alamat = array(
               'name' => '_alamat',

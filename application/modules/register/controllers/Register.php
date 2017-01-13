@@ -9,13 +9,17 @@ class Register extends MX_Controller {
 
 	public function index()
 	{
+		$this->load->module('template');
 		if ($this->lib->login() != "")
+
 		{
 			redirect('');
 		}
 		else
 		{
+			$this->template->navbar();
 			$this->load->view('register_v');
+			$this->template->footer();
 		}
 	}
 
