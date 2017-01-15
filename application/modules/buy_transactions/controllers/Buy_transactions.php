@@ -21,10 +21,10 @@ class Buy_transactions extends MX_Controller
             );
 
         //    $this->template->header($data);
-          //  $this->template->nav_menu();
+          $this->template->navbar();
             //$this->template->sidebar_dashboard();
             $this->load->view('buy', $data);
-            //$this->template->footer();
+            $this->template->footer();
 
         }
         else

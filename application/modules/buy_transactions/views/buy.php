@@ -1,6 +1,6 @@
 <div class="twelve wide column except">
 	<h1 class="ui dividing header"><?=$title?></h1>
-	<table class="ui celled structured table">
+	<table class="ui celled structured table" width="100%">
 		<thead>
 			<tr>
 				<th>No</th>

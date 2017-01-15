@@ -6,7 +6,7 @@ class Ongkir extends MX_Controller
 
 	function __construct() {
         parent::__construct();
-		$this->load->library('rajaongkir');
+		$this->load->library('Rajaongkir');
         $this->key = 'f096681274cb5f40a2531422cdc53315';
     }
 
@@ -18,17 +18,17 @@ class Ongkir extends MX_Controller
 
 	function propinsi()
 	{
-		echo $this->rajaongkir->province();
+		echo $this->Rajaongkir->province();
 	}
 
 	function kota($province_id, $city_id = NULL)
 	{
-		echo $this->rajaongkir->city($province_id, $city_id = NULL);
+		echo $this->Rajaongkir->city($province_id, $city_id = NULL);
 	}
 
 	function cek_harga($origin, $destination, $weight, $courier = NULL)
 	{
-		echo $this->rajaongkir->cost($origin, $destination, $weight, $courier = NULL);
+		echo $this->Rajaongkir->cost($origin, $destination, $weight, $courier = NULL);
 		// $costarray = json_decode($ss);
 		// echo $costarray;
 		// $results = $costarray->rajaongkir->results;
